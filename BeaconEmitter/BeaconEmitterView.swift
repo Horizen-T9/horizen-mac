@@ -11,21 +11,44 @@ struct BeaconEmitterView: View {
     @StateObject var viewModel = BeaconEmitterViewModel()
 
     var body: some View {
+        ZStack {
+            mainForm
+            
+            if viewModel.isShowingQRCode, let qr = viewModel.qrCodeImage {
+                            QRCodeOverlayView(qrCodeImage: qr) {
+                                viewModel.dismissQRCode()
+                            }
+                        }
+                    }
+                    .animation(.easeInOut, value: viewModel.isShowingQRCode)
+        }
+    
+    // MARK: Beacon Form
+    var mainForm: some View {
         Form {
             HStack {
                 TextField("Unique Identifier", text: $viewModel.uuid)
                     .disabled(viewModel.isStarted)
+
                 Button {
                     viewModel.refreshUUID()
                 } label: {
                     Image(systemName: "arrow.clockwise")
-                }.disabled(viewModel.isStarted)
+                }
+                .disabled(viewModel.isStarted)
 
                 Button {
                     viewModel.copyPaste()
                 } label: {
                     Image(systemName: "doc.on.doc")
-                }.disabled(viewModel.isStarted)
+                }
+                .disabled(viewModel.isStarted)
+
+                Button {
+                    viewModel.generateQRCodeImage()
+                } label: {
+                    Image(systemName: "qrcode")
+                }
             }
 
             TextField("Most significant value", value: $viewModel.major, formatter: viewModel.majorMinorFormatter)
@@ -40,15 +63,12 @@ struct BeaconEmitterView: View {
                 viewModel.startStop()
             } label: {
                 Spacer()
-                if viewModel.isStarted {
-                    Text("Turn iBeacon off")
-                } else {
-                    Text("Turn iBeacon on")
-                }
+                Text(viewModel.isStarted ? "Turn iBeacon off" : "Turn iBeacon on")
                 Spacer()
             }
         }
         .padding()
+        .blur(radius: viewModel.isShowingQRCode ? 2 : 0)
         .onDisappear {
             viewModel.save()
         }
