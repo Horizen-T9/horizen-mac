@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AD2E0612DE23F65003BD12B /* QRCodeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD2E0602DE23F60003BD12B /* QRCodeOverlayView.swift */; };
 		4D05552C280F7B6000F2CA80 /* BeaconEmitterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05552B280F7B6000F2CA80 /* BeaconEmitterApp.swift */; };
 		4D05552E280F7B6000F2CA80 /* BeaconEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05552D280F7B6000F2CA80 /* BeaconEmitterView.swift */; };
 		4D055530280F7B6200F2CA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D05552F280F7B6200F2CA80 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AD2E0602DE23F60003BD12B /* QRCodeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeOverlayView.swift; sourceTree = "<group>"; };
 		4D055528280F7B6000F2CA80 /* BeaconEmitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconEmitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D05552B280F7B6000F2CA80 /* BeaconEmitterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconEmitterApp.swift; sourceTree = "<group>"; };
 		4D05552D280F7B6000F2CA80 /* BeaconEmitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconEmitterView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				4D127C4F296E065E001C86AE /* BeaconRegion.swift */,
 				4D127C51296E06E5001C86AE /* BeaconEmitterViewModel.swift */,
 				4D05552D280F7B6000F2CA80 /* BeaconEmitterView.swift */,
+				3AD2E0602DE23F60003BD12B /* QRCodeOverlayView.swift */,
 				4D05552F280F7B6200F2CA80 /* Assets.xcassets */,
 				4D055534280F7B6200F2CA80 /* BeaconEmitter.entitlements */,
 				4D055531280F7B6200F2CA80 /* Preview Content */,
@@ -151,6 +154,7 @@
 				4D127C52296E06E5001C86AE /* BeaconEmitterViewModel.swift in Sources */,
 				4D05552C280F7B6000F2CA80 /* BeaconEmitterApp.swift in Sources */,
 				4D127C50296E065E001C86AE /* BeaconRegion.swift in Sources */,
+				3AD2E0612DE23F65003BD12B /* QRCodeOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +289,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BeaconEmitter/Preview Content\"";
-				DEVELOPMENT_TEAM = R777T775T9;
+				DEVELOPMENT_TEAM = 952GA4Q296;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -320,7 +324,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BeaconEmitter/Preview Content\"";
-				DEVELOPMENT_TEAM = R777T775T9;
+				DEVELOPMENT_TEAM = 952GA4Q296;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

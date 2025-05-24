@@ -10,6 +10,8 @@ import CoreBluetooth
 import CoreLocation
 import Foundation
 import SwiftUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
 
 class BeaconEmitterViewModel: NSObject, ObservableObject {
     @AppStorage("previousUUID") private var savedUUID: String?
@@ -39,6 +41,14 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
 
     @Published
     var power: Int8 = -59
+    
+    @Published
+    var qrCodeImage: NSImage?
+    @Published
+    var isShowingQRCode: Bool = false
+    
+    private let context = CIContext()
+    private let filter = CIFilter.qrCodeGenerator()
 
     override init() {
         super.init()
@@ -83,6 +93,29 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.setString(uuid, forType: .string)
+    }
+    
+    func generateQRCodeImage() {
+        let data = Data(uuid.utf8)
+        filter.setValue(data, forKey: "inputMessage")
+        
+        if let outputImage = filter.outputImage {
+            let transformed = outputImage.transformed(by: CGAffineTransform(scaleX: 10, y: 10))
+            if let cgimg = context.createCGImage(transformed, from: transformed.extent) {
+                let nsImage = NSImage(cgImage: cgimg, size: NSSize(width: 256, height: 256))
+                DispatchQueue.main.async {
+                    self.qrCodeImage = nsImage
+                    self.isShowingQRCode = true
+                }
+            }
+        } else {
+            qrCodeImage = nil
+            isShowingQRCode = false
+        }
+    }
+    
+    func dismissQRCode() {
+        isShowingQRCode = false
     }
 
     @objc
