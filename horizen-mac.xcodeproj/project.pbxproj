@@ -23,7 +23,7 @@
 		4D05552D280F7B6000F2CA80 /* BeaconEmitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconEmitterView.swift; sourceTree = "<group>"; };
 		4D05552F280F7B6200F2CA80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D055532280F7B6200F2CA80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4D055534280F7B6200F2CA80 /* BeaconEmitter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeaconEmitter.entitlements; sourceTree = "<group>"; };
+		4D055534280F7B6200F2CA80 /* horizen-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "horizen-mac.entitlements"; sourceTree = "<group>"; };
 		4D0A2C46297AD76F00438A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4D127C4F296E065E001C86AE /* BeaconRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconRegion.swift; sourceTree = "<group>"; };
 		4D127C51296E06E5001C86AE /* BeaconEmitterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconEmitterViewModel.swift; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		4D05551F280F7B6000F2CA80 = {
 			isa = PBXGroup;
 			children = (
-				4D05552A280F7B6000F2CA80 /* BeaconEmitter */,
+				4D05552A280F7B6000F2CA80 /* horizen-mac */,
 				4D055529280F7B6000F2CA80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,7 +56,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4D05552A280F7B6000F2CA80 /* BeaconEmitter */ = {
+		4D05552A280F7B6000F2CA80 /* horizen-mac */ = {
 			isa = PBXGroup;
 			children = (
 				4D0A2C46297AD76F00438A84 /* Info.plist */,
@@ -66,10 +66,10 @@
 				4D05552D280F7B6000F2CA80 /* BeaconEmitterView.swift */,
 				3AD2E0602DE23F60003BD12B /* QRCodeOverlayView.swift */,
 				4D05552F280F7B6200F2CA80 /* Assets.xcassets */,
-				4D055534280F7B6200F2CA80 /* BeaconEmitter.entitlements */,
+				4D055534280F7B6200F2CA80 /* horizen-mac.entitlements */,
 				4D055531280F7B6200F2CA80 /* Preview Content */,
 			);
-			path = BeaconEmitter;
+			path = "horizen-mac";
 			sourceTree = "<group>";
 		};
 		4D055531280F7B6200F2CA80 /* Preview Content */ = {
@@ -115,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4D055523280F7B6000F2CA80 /* Build configuration list for PBXProject "BeaconEmitter" */;
+			buildConfigurationList = 4D055523280F7B6000F2CA80 /* Build configuration list for PBXProject "horizen-mac" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -281,20 +281,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BeaconEmitter/BeaconEmitter.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "horizen-mac/horizen-mac.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"BeaconEmitter/Preview Content\"";
-				DEVELOPMENT_TEAM = 952GA4Q296;
+				DEVELOPMENT_ASSET_PATHS = "\"horizen-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 3QGY9BFW95;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BeaconEmitter/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Beacon Emitter";
+				INFOPLIST_FILE = "horizen-mac/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Horizen Mac";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need your permission to use Bluetooth to share iBeacon";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "2023 Laurent Gaches";
@@ -304,7 +305,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.l18.app.be;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pramakusuma.horizen-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -316,20 +317,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BeaconEmitter/BeaconEmitter.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "horizen-mac/horizen-mac.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"BeaconEmitter/Preview Content\"";
-				DEVELOPMENT_TEAM = 952GA4Q296;
+				DEVELOPMENT_ASSET_PATHS = "\"horizen-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 3QGY9BFW95;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BeaconEmitter/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Beacon Emitter";
+				INFOPLIST_FILE = "horizen-mac/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Horizen Mac";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need your permission to use Bluetooth to share iBeacon";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "2023 Laurent Gaches";
@@ -339,7 +341,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.l18.app.be;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pramakusuma.horizen-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -349,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4D055523280F7B6000F2CA80 /* Build configuration list for PBXProject "BeaconEmitter" */ = {
+		4D055523280F7B6000F2CA80 /* Build configuration list for PBXProject "horizen-mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D055535280F7B6200F2CA80 /* Debug */,

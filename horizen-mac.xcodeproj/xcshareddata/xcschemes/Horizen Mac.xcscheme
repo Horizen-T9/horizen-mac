@@ -18,7 +18,7 @@
                BlueprintIdentifier = "4D055527280F7B6000F2CA80"
                BuildableName = "BeaconEmitter.app"
                BlueprintName = "BeaconEmitter"
-               ReferencedContainer = "container:BeaconEmitter.xcodeproj">
+               ReferencedContainer = "container:horizen-mac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "4D055527280F7B6000F2CA80"
             BuildableName = "BeaconEmitter.app"
             BlueprintName = "BeaconEmitter"
-            ReferencedContainer = "container:BeaconEmitter.xcodeproj">
+            ReferencedContainer = "container:horizen-mac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "4D055527280F7B6000F2CA80"
             BuildableName = "BeaconEmitter.app"
             BlueprintName = "BeaconEmitter"
-            ReferencedContainer = "container:BeaconEmitter.xcodeproj">
+            ReferencedContainer = "container:horizen-mac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
