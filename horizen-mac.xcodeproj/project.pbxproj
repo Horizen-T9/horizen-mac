@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,10 @@
 		4D127C4F296E065E001C86AE /* BeaconRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconRegion.swift; sourceTree = "<group>"; };
 		4D127C51296E06E5001C86AE /* BeaconEmitterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconEmitterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3AB39C222DE4474100D1A38E /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4D055525280F7B6000F2CA80 /* Frameworks */ = {
@@ -59,6 +63,7 @@
 		4D05552A280F7B6000F2CA80 /* horizen-mac */ = {
 			isa = PBXGroup;
 			children = (
+				3AB39C222DE4474100D1A38E /* Util */,
 				4D0A2C46297AD76F00438A84 /* Info.plist */,
 				4D05552B280F7B6000F2CA80 /* BeaconEmitterApp.swift */,
 				4D127C4F296E065E001C86AE /* BeaconRegion.swift */,
@@ -94,6 +99,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3AB39C222DE4474100D1A38E /* Util */,
 			);
 			name = BeaconEmitter;
 			productName = BeaconEmitter;

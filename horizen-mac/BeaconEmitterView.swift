@@ -28,7 +28,7 @@ struct BeaconEmitterView: View {
         Form {
             HStack {
                 TextField("Unique Identifier", text: $viewModel.uuid)
-                    .disabled(viewModel.isStarted)
+                    .disabled(true)
 
                 Button {
                     viewModel.refreshUUID()

@@ -28,7 +28,7 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
     var isStarted: Bool = false
 
     @Published
-    var uuid: String = UUID().uuidString
+    var uuid: String = CustomUUIDGen().uuidString
 
     @Published
     var major: UInt16 = 0
@@ -86,7 +86,7 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
     }
 
     func refreshUUID() {
-        uuid = UUID().uuidString
+        uuid = CustomUUIDGen().uuidString
     }
 
     func copyPaste() {
