@@ -51,13 +51,15 @@ struct BeaconEmitterView: View {
                 }
             }
 
-            TextField("Most significant value", value: $viewModel.major, formatter: viewModel.majorMinorFormatter)
-                .disabled(viewModel.isStarted)
-            TextField("Least significant value", value: $viewModel.minor, formatter: viewModel.majorMinorFormatter)
-                .disabled(viewModel.isStarted)
-            TextField("Power", value: $viewModel.power, formatter: viewModel.powerFormatter)
-                .disabled(viewModel.isStarted)
-            Text(viewModel.status)
+//            TextField("Most significant value", value: $viewModel.major, formatter: viewModel.majorMinorFormatter)
+//                .disabled(viewModel.isStarted)
+            
+//            TextField("Least significant value", value: $viewModel.minor, formatter: viewModel.majorMinorFormatter)
+//                .disabled(viewModel.isStarted)
+            
+//            TextField("Power", value: $viewModel.power, formatter: viewModel.powerFormatter)
+//                .disabled(viewModel.isStarted)
+//            Text(viewModel.status)
 
             Button {
                 viewModel.startStop()
