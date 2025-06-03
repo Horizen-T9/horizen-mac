@@ -29,6 +29,12 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
 
     @Published
     var uuid: String = CustomUUIDGen().uuidString
+    
+    @Published
+    var beaconLabel: String = ""
+    
+    @Published
+    var isShowingAlert: Bool = false
 
     @Published
     var major: UInt16 = 0
@@ -71,6 +77,11 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
 
     func startStop() {
         guard let emitter else { return }
+        
+        if !checkTextFieldValidity() {
+            isShowingAlert.toggle()
+            return
+        }
 
         if emitter.isAdvertising {
             emitter.stopAdvertising()
@@ -88,6 +99,19 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
     func refreshUUID() {
         uuid = CustomUUIDGen().uuidString
     }
+    
+    func checkTextFieldValidity() -> Bool {
+        if beaconLabel.trimmingCharacters(in: .whitespaces).isEmpty {
+            status = "The text fields cannot be empty"
+            return false
+        }
+        
+        if beaconLabel.trimmingCharacters(in: .whitespaces).contains(";") {
+            status = "The text fields cannot contain ';'"
+            return false
+        }
+        return true
+    }
 
     func copyPaste() {
         let pasteboard = NSPasteboard.general
@@ -96,7 +120,8 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
     }
     
     func generateQRCodeImage() {
-        let data = Data(uuid.utf8)
+        let qrRawString = "\(uuid);\(beaconLabel)"
+        let data = Data(qrRawString.utf8)
         filter.setValue(data, forKey: "inputMessage")
         
         if let outputImage = filter.outputImage {

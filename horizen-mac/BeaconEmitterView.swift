@@ -27,7 +27,7 @@ struct BeaconEmitterView: View {
     var mainForm: some View {
         Form {
             HStack {
-                TextField("Unique Identifier", text: $viewModel.uuid)
+                TextField("Unique Identifier*", text: $viewModel.uuid)
                     .disabled(true)
 
                 Button {
@@ -44,29 +44,32 @@ struct BeaconEmitterView: View {
                 }
                 .disabled(viewModel.isStarted)
 
+            }
+
+            TextField("Beacon Label*", text: $viewModel.beaconLabel)
+                .disabled(viewModel.isStarted)
+            
+            HStack {
+                Button {
+                    viewModel.startStop()
+                    NSApplication.shared.keyWindow?.makeFirstResponder(nil)
+                } label: {
+                    Spacer()
+                    Text(viewModel.isStarted ? "Turn Beacon off" : "Turn Beacon on")
+                    Spacer()
+                }
+                
                 Button {
                     viewModel.generateQRCodeImage()
                 } label: {
                     Image(systemName: "qrcode")
                 }
+                .disabled(!viewModel.isStarted)
+                .help(!viewModel.isStarted ? "You can't generate a QR code until the beacon is turned on" : "")
             }
-
-//            TextField("Most significant value", value: $viewModel.major, formatter: viewModel.majorMinorFormatter)
-//                .disabled(viewModel.isStarted)
             
-//            TextField("Least significant value", value: $viewModel.minor, formatter: viewModel.majorMinorFormatter)
-//                .disabled(viewModel.isStarted)
-            
-//            TextField("Power", value: $viewModel.power, formatter: viewModel.powerFormatter)
-//                .disabled(viewModel.isStarted)
-//            Text(viewModel.status)
-
-            Button {
-                viewModel.startStop()
-            } label: {
-                Spacer()
-                Text(viewModel.isStarted ? "Turn iBeacon off" : "Turn iBeacon on")
-                Spacer()
+            .alert(isPresented: $viewModel.isShowingAlert){
+                Alert(title: Text("Warning"), message: Text(viewModel.status), dismissButton: .default(Text("Okay")))
             }
         }
         .padding()
