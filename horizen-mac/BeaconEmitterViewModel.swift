@@ -120,7 +120,7 @@ class BeaconEmitterViewModel: NSObject, ObservableObject {
     }
     
     func generateQRCodeImage() {
-        let qrRawString = "\(uuid);\(beaconLabel)"
+        let qrRawString = "\(beaconLabel);\(uuid)"
         let data = Data(qrRawString.utf8)
         filter.setValue(data, forKey: "inputMessage")
         
